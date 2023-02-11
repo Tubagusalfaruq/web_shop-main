@@ -61,7 +61,7 @@ function callAPI($method, $url, $data)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP - CRUD (API + Bootstrap)</title>
+    <title>Tugas Besar Web Sederhana</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -69,8 +69,25 @@ function callAPI($method, $url, $data)
 </head>
 
 <body>
+
+<nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand"  href="#">Tubagus Alfaruq.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          </div>
+    </nav>
+
     <section>
-        <h1 style="text-align: center;margin: 50px 0;">TUGAS BESAR PHP CRUD (API + Bootstrap)</h1>
+        <h1 style="text-align: center;margin: 50px 0;">Toko Barang Ter-Update</h1>
         <div class="container">
             <form action="?action=<?php echo (isset($_GET['id']) && isset($_GET['image']) && isset($_GET['name']) && isset($_GET['description'])) ? 'update' : 'add'; ?>" method="post">
                 <div class="row">
@@ -133,11 +150,107 @@ function callAPI($method, $url, $data)
                             <td><?php echo $name; ?></td>
                             <td><?php echo $description; ?></td>
                             <td><a href="?id=<?php echo $data[$i]['id']; ?>&image=<?php echo $data[$i]['image']; ?>&name=<?php echo $data[$i]['name']; ?>&description=<?php echo $data[$i]['description']; ?>" class="btn btn-primary">Update</a></td>
-                            <td><a href="?id=<?php echo $id; ?>&action=delete" class="btn btn-danger">Delete</a></td>
+                            <td><a href="?id=<?php echo $id; ?>&action=delete" class="btn btn-danger">Hapus Barang</a></td>
                         </tr>
                     <?php
                     }
                     ?>
+
+<div class="container-fluid pt-5 pb-5 bg-light">
+      <div class="container text-center">
+        <h2 class="display-3" id="Tersedia">Barang Tersedia</h2>
+      
+        <div class="row pt-4 gx-4 gy-4">
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/mobil.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              
+              <div class="card-body">
+                <h5 class="card-title">Mobil Bekas tapi Murah ditahun 2023 yang Masih Layak untuk Dimiliki</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/motor.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              
+              <div class="card-body">
+                <h5 class="card-title">Jual Motor Bekas, Pemakaian Sehari-hari. Barang Dijamin Masih Oke 80%</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/lemari.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              
+              <div class="card-body">
+                <h5 class="card-title">Jual Lemari Bekas. Barang Masih Mulus 90%</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/sepeda.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jual Sepeda balap Bekas, Dijamin Nyaman dipakai. Barang masih Mulus 80%</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/skuter.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jual Skuter Bekas, Jarang Di Pakai. Siap Menemani Perjalanan anda</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card crop-img">
+              <img
+                src="image/meja.jpg"
+                class="card-img-top"
+                width="200"
+                height="200"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jual Meja , Cocok Untuk digunakan Belajar atau Mengerjakan Pekerjaan Kantor agar lebih Nyaman dalam Bekerja</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
                 </tbody>
             </table>
         </div>
